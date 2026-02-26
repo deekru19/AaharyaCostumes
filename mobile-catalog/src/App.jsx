@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCreative, Pagination } from 'swiper/modules';
+import { EffectCards, Pagination } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/effect-creative';
+import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
 import './App.css';
 
@@ -139,26 +139,14 @@ function App() {
       </header>
 
       <Swiper
-        modules={[EffectCreative, Pagination]}
+        modules={[EffectCards, Pagination]}
         className="catalog-swiper"
-        direction="vertical"
-        effect="creative"
-        watchSlidesProgress
-        speed={640}
-        resistanceRatio={0.35}
-        creativeEffect={{
-          prev: {
-            shadow: true,
-            translate: [0, '-18%', -220],
-            scale: 0.84,
-            opacity: 0.28,
-          },
-          next: {
-            translate: [0, '100%', 0],
-            scale: 0.98,
-            opacity: 0.95,
-          },
-          limitProgress: 2,
+        effect="cards"
+        grabCursor={true}
+        cardsEffect={{
+          slideShadows: true,
+          perSlideOffset: 12,
+          perSlideRotate: 3,
         }}
         pagination={{
           clickable: true,

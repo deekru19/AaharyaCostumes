@@ -85,37 +85,9 @@
   justify-content: center;
   align-items: center;
   transform-origin: center center;
-  opacity: 0.92;
-  filter: saturate(0.95) brightness(0.96);
-  transition:
-    transform 560ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 460ms ease,
-    filter 460ms ease;
 }
 
-.swiper-slide-active .slide-card {
-  opacity: 1;
-  filter: saturate(1) brightness(1);
-  transform: translateY(0) scale(1);
-}
 
-.swiper-slide-prev .slide-card {
-  opacity: 0.38;
-  filter: saturate(0.62) brightness(0.82);
-  transform: translateY(-2.8%) scale(0.91);
-}
-
-.swiper-slide-next .slide-card {
-  opacity: 0.9;
-  filter: saturate(0.9) brightness(0.96);
-  transform: translateY(1%) scale(0.985);
-}
-
-.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) .slide-card {
-  opacity: 0.16;
-  filter: saturate(0.45) brightness(0.7);
-  transform: scale(0.86);
-}
 
 .card-shell {
   position: relative;
