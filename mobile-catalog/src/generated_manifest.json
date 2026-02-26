@@ -1,0 +1,23 @@
+[
+  {"id": 1, "input": "Aharya Costumes 2025 (1)_page-0006.jpg", "output": "catalog_assets/generated/look_01.jpg"},
+  {"id": 2, "input": "Aharya Costumes 2025 (1)_page-0007.jpg", "output": "catalog_assets/generated/look_02.jpg"},
+  {"id": 3, "input": "Aharya Costumes 2025 (1)_page-0008.jpg", "output": "catalog_assets/generated/look_03.jpg"},
+  {"id": 4, "input": "Aharya Costumes 2025 (1)_page-0009.jpg", "output": "catalog_assets/generated/look_04.jpg"},
+  {"id": 5, "input": "Aharya Costumes 2025 (1)_page-0010.jpg", "output": "catalog_assets/generated/look_05.jpg"},
+  {"id": 6, "input": "Aharya Costumes 2025 (1)_page-0012.jpg", "output": "catalog_assets/generated/look_06.jpg"},
+  {"id": 7, "input": "Aharya Costumes 2025 (1)_page-0015.jpg", "output": "catalog_assets/generated/look_07.jpg"},
+  {"id": 8, "input": "Aharya Costumes 2025 (1)_page-0017.jpg", "output": "catalog_assets/generated/look_08.jpg"},
+  {"id": 9, "input": "Aharya Costumes 2025 (1)_page-0019.jpg", "output": "catalog_assets/generated/look_09.jpg"},
+  {"id": 10, "input": "Aharya Costumes 2025 (1)_page-0020.jpg", "output": "catalog_assets/generated/look_10.jpg"},
+  {"id": 11, "input": "Aharya Costumes 2025 (1)_page-0021.jpg", "output": "catalog_assets/generated/look_11.jpg"},
+  {"id": 12, "input": "Aharya Costumes 2025 (1)_page-0022.jpg", "output": "catalog_assets/generated/look_12.jpg"},
+  {"id": 13, "input": "Aharya Costumes 2025 (1)_page-0024.jpg", "output": "catalog_assets/generated/look_13.jpg"},
+  {"id": 14, "input": "Aharya Costumes 2025 (1)_page-0026.jpg", "output": "catalog_assets/generated/look_14.jpg"},
+  {"id": 15, "input": "Aharya Costumes 2025 (1)_page-0028.jpg", "output": "catalog_assets/generated/look_15.jpg"},
+  {"id": 16, "input": "Aharya Costumes 2025 (1)_page-0029.jpg", "output": "catalog_assets/generated/look_16.jpg"},
+  {"id": 17, "input": "Aharya Costumes 2025 (1)_page-0030.jpg", "output": "catalog_assets/generated/look_17.jpg"},
+  {"id": 18, "input": "Aharya Costumes 2025 (1)_page-0036.jpg", "output": "catalog_assets/generated/look_18.jpg"},
+  {"id": 19, "input": "page_2.jpg", "output": "catalog_assets/generated/look_19.jpg"},
+  {"id": 20, "input": "page_3.jpg", "output": "catalog_assets/generated/look_20.jpg"},
+  {"id": 21, "input": "page_4.jpg", "output": "catalog_assets/generated/look_21.jpg"}
+]

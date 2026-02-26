@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "type": "text",
+    "content": "AHARYA COSTUMES &\nDANCE NEEDS\nChoose from a range of over\n 100 Bharathanatyam and\n Semi Classical costumes & accessories\nfor different age groups\nLocation: Bangalore"
+  },
+  {
+    "id": 1,
+    "type": "text",
+    "content": "How to choose : \nA. You can visit Natanam Foundation, Horamavu\n(Bangalore) and choose your costumes\nB. Send a picture of the dancer \nand get the costume delivered to your place \n Reach us at +91 9483614108 / 9449764782 \nfor further details and bookings"
+  },
+  {
+    "id": 2,
+    "type": "photo",
+    "src": "catalog_assets/page_2.jpg"
+  },
+  {
+    "id": 3,
+    "type": "photo",
+    "src": "catalog_assets/page_3.jpg"
+  },
+  {
+    "id": 4,
+    "type": "photo",
+    "src": "catalog_assets/page_4.jpg"
+  }
+]
