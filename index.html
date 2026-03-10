@@ -21,15 +21,69 @@
       }
 
       .loading {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        padding: 10px 12px;
-        text-align: center;
-        background: rgba(30, 30, 30, 0.95);
-        border-bottom: 1px solid #333;
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #1e1e1e;
         color: #ccc;
+        font-size: 15px;
+        gap: 20px;
+        transition: opacity 0.4s ease;
+      }
+
+      .loading.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loader-spinner {
+        width: 48px;
+        height: 48px;
+        border: 3px solid #333;
+        border-top-color: #c9a96e;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loader-text {
         font-size: 14px;
+        color: #aaa;
+        letter-spacing: 0.3px;
+      }
+
+      .loader-bar-track {
+        width: 200px;
+        height: 4px;
+        background: #333;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .loader-bar-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #c9a96e, #e8d5a3);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+
+      .loader-brand {
+        font-size: 22px;
+        font-weight: 600;
+        color: #e8d5a3;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
       }
 
       #viewer {
@@ -112,7 +166,14 @@
     </style>
   </head>
   <body>
-    <div id="loading" class="loading">Loading catalog…</div>
+    <div id="loading" class="loading">
+      <div class="loader-brand">Aaharya Costumes</div>
+      <div class="loader-spinner"></div>
+      <div id="loader-text" class="loader-text">Loading catalog…</div>
+      <div class="loader-bar-track">
+        <div id="loader-bar" class="loader-bar-fill"></div>
+      </div>
+    </div>
     <div id="error" class="error"></div>
     <div id="page-indicator"></div>
     <main id="viewer" aria-label="PDF viewer"></main>
@@ -123,13 +184,19 @@
       setTimeout(function () {
         if (window.__pdfViewerStarted) return;
         var el = document.getElementById("loading");
-        if (el) el.style.display = "none";
+        if (el) {
+          el.classList.add("fade-out");
+          setTimeout(function () {
+            el.style.display = "none";
+          }, 400);
+        }
         var err = document.getElementById("error");
         if (err) {
           err.style.display = "block";
-          err.textContent = window.location.protocol === "file:"
-            ? "Cannot load over file://. Please use a local server: python3 -m http.server"
-            : "Unable to load the catalog. Please try refreshing the page.";
+          err.textContent =
+            window.location.protocol === "file:"
+              ? "Cannot load over file://. Please use a local server: python3 -m http.server"
+              : "Unable to load the catalog. Please try refreshing the page.";
         }
       }, 5000);
     </script>
@@ -224,7 +291,10 @@
         const count = Math.min(pdfDoc.numPages, 3);
         for (let i = 1; i <= count; i++) {
           await renderPage(i);
-          loadingEl.textContent = "Loading page " + i + " / " + pdfDoc.numPages + "…";
+          document.getElementById("loader-text").textContent =
+            "Loading page " + i + " of " + pdfDoc.numPages + "…";
+          document.getElementById("loader-bar").style.width =
+            Math.round((i / Math.min(pdfDoc.numPages, 3)) * 100) + "%";
         }
       }
 
@@ -296,7 +366,10 @@
         addPagePlaceholders(totalPages, vp.height / vp.width);
         await renderInitialPages();
         setupLazyRender();
-        loadingEl.style.display = "none";
+        loadingEl.classList.add("fade-out");
+        setTimeout(() => {
+          loadingEl.style.display = "none";
+        }, 400);
         updatePageIndicator();
       }
 
