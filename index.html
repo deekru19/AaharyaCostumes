@@ -27,6 +27,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aaharya Costumes | Classical Dance Costumes - Rent, Buy & Stitch India" />
     <meta name="twitter:description" content="Bharatanatyam, Kuchipudi, Mohiniyattam, Kathak & Odissi costumes. Rent, buy, or custom-stitch. Pan-India delivery by Natanam Foundation." />
+    <meta name="twitter:image" content="https://costumes.natanamfoundation.com/og-cover.webp" />
+    <meta property="og:image" content="https://costumes.natanamfoundation.com/og-cover.webp" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="589" />
+    <meta property="og:image:alt" content="Aaharya Costumes - Classical dance costumes for Bharatanatyam, Kuchipudi, and more" />
 
     <!-- Theme & Mobile -->
     <meta name="theme-color" content="#1e1e1e" />
@@ -36,9 +41,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Aaharya Costumes" />
 
-    <!-- Preload critical resources -->
+    <!-- Preload critical resource -->
     <link rel="preload" href="./pdfjs/pdf.min.mjs" as="script" crossorigin />
-    <link rel="preload" href="./pdfjs/pdf.worker.min.mjs" as="script" crossorigin />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -476,7 +480,12 @@
       });
 
       async function init() {
-        pdfDoc = await pdfjsLib.getDocument({ url: PDF_URL }).promise;
+        pdfDoc = await pdfjsLib.getDocument({
+          url: PDF_URL,
+          rangeChunkSize: 65536,
+          disableAutoFetch: true,
+          disableStream: false,
+        }).promise;
         totalPages = pdfDoc.numPages;
         const firstPage = await pdfDoc.getPage(1);
         const vp = firstPage.getViewport({ scale: 1 });
