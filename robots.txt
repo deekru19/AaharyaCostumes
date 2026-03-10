@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pdfjs/
+
+Sitemap: https://costumes.natanamfoundation.com/sitemap.xml
